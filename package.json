@@ -1,0 +1,14 @@
+{
+  "name": "cypresscompletetutorial_giannibruno",
+  "version": "1.0.0",
+  "description": "Cypress v12 automation framework tutorial ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eugene Chirkun",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.14.0"
+  }
+}
