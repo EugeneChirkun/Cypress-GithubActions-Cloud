@@ -16,9 +16,52 @@ describe("Working with aliases", () => {
   it("Alias challenge", () => {
     cy.visit("https://automationteststore.com/");
 
-    cy.get(".thumbnail").as('produchThumbnail');
+    cy.get(".thumbnail").as("produchThumbnail");
 
-    cy.get("@produchThumbnail").should('have.length', 16);
-    cy.get("@produchThumbnail").find('.productcart').invoke('attr', 'title').should('include', 'Add to Cart');
+    cy.get("@produchThumbnail").should("have.length", 16);
+    cy.get("@produchThumbnail")
+      .find(".productcart")
+      .invoke("attr", "title")
+      .should("include", "Add to Cart");
+  });
+
+  it.only("Calculate total of normal and sale products", () => {
+    cy.visit("https://automationteststore.com/");
+
+    cy.get(".thumbnail").as("produchThumbnail");
+    // cy.get("@produchThumbnail").find('.oneprice').each(($el, index, $list) => {
+    //   cy.log("Index: " + index + " : " + $el.text());
+    // });
+    cy.get("@produchThumbnail").find('.oneprice').invoke('text').as('itemPrice');
+    cy.get("@produchThumbnail").find('.pricenew').invoke('text').as('saleItemPrice');
+    
+    var itemsTotal = 0;
+    cy.get('@itemPrice').then($linkText => {
+        var itemPriceTotal = 0;
+        var itemPriceArr = $linkText.split('$');
+        var i;
+        for(i = 0; i < itemPriceArr.length; i++) {
+            cy.log(itemPriceArr[i]);
+            itemPriceTotal += Number(itemPriceArr[i]);
+        }
+        itemsTotal += itemPriceTotal;
+        cy.log('Non-sale items total is: ' + itemPriceTotal);
+    });
+
+    cy.get('@saleItemPrice').then($linkText => {
+        var saleItemPriceTotal = 0;
+        var saleItemPriceArr = $linkText.split('$');
+        var i;
+        for(i = 0; i < saleItemPriceArr.length; i++) {
+            cy.log(saleItemPriceArr[i]);
+            saleItemPriceTotal += Number(saleItemPriceArr[i]);
+        }
+        itemsTotal += saleItemPriceTotal;
+        cy.log('Sale items total is: ' + saleItemPriceTotal);
+    })
+    .then(() => {
+        cy.log('All items total is: ' + itemsTotal); 
+        expect(itemsTotal).to.equal(660.5);
+    })
   });
 });
