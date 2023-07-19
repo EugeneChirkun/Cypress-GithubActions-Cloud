@@ -42,6 +42,6 @@ npx cypress run
 
 To install plugin, run:
 ```shell
-
+npm install --save-dev @cypress/xpath
 ```
 Then, inside the e2e.js file (Located inside the support folder), you simply need to add: require('@cypress/xpath');
