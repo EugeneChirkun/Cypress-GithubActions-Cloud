@@ -1,7 +1,7 @@
 /// <reference types='Cypress' />
 
 describe("Test Contact Us form via Automation Test Store", () => {
-  it.only("Should be able to successfully submit Contact Us form", () => {
+  it("Should be able to successfully submit Contact Us form", () => {
     cy.visit("https://automationteststore.com/");
     // cy.xpath('//a[contains(@href, \'contact\')]').click();
     cy.get("a[href$='contact']")
