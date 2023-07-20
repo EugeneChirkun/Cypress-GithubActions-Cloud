@@ -45,3 +45,25 @@ To install plugin, run:
 npm install --save-dev @cypress/xpath
 ```
 Then, inside the e2e.js file (Located inside the support folder), you simply need to add: require('@cypress/xpath');
+
+## Using Safari(Webkit) browser
+
+Cypress has experimental support for WebKit, Safari's browser engine. 
+Testing your app with WebKit is representative of how your app would run in Safari.
+To opt-in to experimentalWebKitSupport, follow these steps:
+
+Add 
+```
+experimentalWebKitSupport: true
+```
+ to your configuration to enable the experiment.
+Install the playwright-webkit NPM package in your repo to acquire WebKit itself: 
+```shell
+npm install --save-dev playwright-webkit@1.34
+```
+This experiment built on top of the Playwright WebKit browser as a stepping stone towards creating a better UX with Cypress-provided browsers in the future. 
+Now, you should be able to use WebKit like any other browser. For example, to record with WebKit in CI:
+```shell
+cypress run --browser webkit --record # ...
+```
+WebKit support is experimental, so you may encounter issues. 
