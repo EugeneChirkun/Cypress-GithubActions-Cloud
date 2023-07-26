@@ -1,10 +1,12 @@
 /// <reference types='Cypress' />
 
 describe("Handling WebdriverUniversity autocomplete", () => {
-  it("Select specific product via autocomplete", () => {
+  beforeEach(() => {
     cy.visit("http://www.webdriveruniversity.com/");
     cy.get("#autocomplete-textfield").invoke("removeAttr", "target").click();
+  });
 
+  it("Select specific product via autocomplete", () => {
     cy.get("#myInput").type("A");
     cy.get("#myInputautocomplete-list > *")
       .each(($el, index, list) => {
@@ -12,7 +14,7 @@ describe("Handling WebdriverUniversity autocomplete", () => {
         const productToSelect = "Avacado";
 
         if (prod === productToSelect) {
-          $el.trigger('click');
+          $el.trigger("click");
           cy.get("#submit-button").click();
           cy.url().should("include", productToSelect);
         }
@@ -24,7 +26,7 @@ describe("Handling WebdriverUniversity autocomplete", () => {
           const productToSelect = "Garlic";
 
           if (prod === productToSelect) {
-            $el.trigger('click');
+            $el.trigger("click");
             cy.get("#submit-button").click();
             cy.url().should("include", productToSelect);
           }

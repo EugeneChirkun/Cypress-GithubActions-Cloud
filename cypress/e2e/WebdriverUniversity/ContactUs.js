@@ -1,9 +1,12 @@
 /// <reference types='Cypress' />
 
 describe("Test Contact Us form via WebdriverUniversity", () => {
-  it.only("Should be able to successfully submit Contact Us form", () => {
+  beforeEach(() => {
     cy.visit("http://www.webdriveruniversity.com/");
     cy.get("#contact-us").invoke("removeAttr", "target").click();
+  });
+
+  it.only("Should be able to successfully submit Contact Us form", () => {
     cy.document().should("have.property", "charset", "UTF-8");
     cy.title().should("include", "WebDriver");
     cy.get('[name = "first_name"]').type("John");
@@ -15,8 +18,6 @@ describe("Test Contact Us form via WebdriverUniversity", () => {
   });
 
   it("Should not be able to successfully submit Contact Us form", () => {
-    cy.visit("http://www.webdriveruniversity.com/");
-    cy.get("#contact-us").invoke("removeAttr", "target").click();
     cy.get('[name = "first_name"]').type("John");
     cy.get('[name="last_name"]').type("Deer");
     cy.get('[name="message"]').type("My test message");
