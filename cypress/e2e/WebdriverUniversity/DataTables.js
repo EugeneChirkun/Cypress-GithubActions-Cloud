@@ -31,4 +31,3 @@ describe("Working with data tables on WebdriverUniversity", () => {
           });
     });
   });
-  
