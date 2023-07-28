@@ -1,6 +1,10 @@
+import StoreHomePage from "../../support/PageObjects/AutomationStore/StoreHomePage";
+import HairCarePage from "../../support/PageObjects/AutomationStore/HairCarePage";
 /// <reference types='Cypress' />
 
 describe("Add multiple items to the shopping cart", () => {
+const storeHomePage = new StoreHomePage();
+const hairCarePage = new HairCarePage();
   before(() => {
     cy.fixture("products").then((products) => {
       globalThis.products = products;
@@ -8,14 +12,15 @@ describe("Add multiple items to the shopping cart", () => {
   });
 
   beforeEach(() => {
-    cy.visit("https://automationteststore.com/");
-    cy.get("a[href*='product/category&path=']").contains("Hair Care").click();
+    storeHomePage.accessHomePage();
+    storeHomePage.clickOnHairCareLink();
   });
 
   it("Add specific item to the shopping cart", () => {
-    globalThis.products.productName.forEach((element) => {
-      cy.addProductToCart(element);
-    });
-    cy.get('.dropdown-toggle > .fa').click();
+    hairCarePage.addHairCareProductsToCart();
+    // globalThis.products.productName.forEach((element) => {
+    //   cy.addProductToCart(element);
+    // });
+    // cy.get('.dropdown-toggle > .fa').click();
   });
 });

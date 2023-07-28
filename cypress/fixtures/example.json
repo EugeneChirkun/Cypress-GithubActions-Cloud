@@ -1,7 +1,7 @@
 {
   "name": "Using fixtures to represent data",
   "email": "john.dowson@testmail.com",
-  "messageText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "messageText": "Lorem ipsum dolor sit amet.",
   "firstName": "John",
   "lastName": "Dowson"
 }

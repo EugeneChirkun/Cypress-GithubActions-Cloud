@@ -1,20 +1,24 @@
+import HomePage from "../../support/PageObjects/WebdriverUni/HomePage";
+import ContactUsPage from "../../support/PageObjects/WebdriverUni/ContactUsPage";
 /// <reference types='Cypress' />
 
 describe("Test Contact Us form via WebdriverUniversity", () => {
-  beforeEach(() => {
+  const homePage = new HomePage();
+  const contactUsPage = new ContactUsPage();
+  
+  before(() => {
     cy.fixture("example").then((data) => {
       globalThis.data = data;
     });
-    cy.visit(
-      Cypress.env("webdriverUniversityHomePage") + "/Contact-Us/contactus.html"
-    );
+  });
+  beforeEach(() => {
+    homePage.visitHomePage();
+    homePage.clickOnContactUsButton();
   });
 
   it("Should be able to successfully submit Contact Us form", () => {
-    cy.document().should("have.property", "charset", "UTF-8");
-    cy.title().should("include", "WebDriver");
-    cy.webdriverUniversityContactUsFormSubmit(
-      Cypress.env("firstName"),
+    contactUsPage.contactFormSubmission(
+      data.firstName,
       data.lastName,
       data.email,
       data.messageText,
@@ -24,7 +28,8 @@ describe("Test Contact Us form via WebdriverUniversity", () => {
   });
 
   it("Should not be able to successfully submit Contact Us form", () => {
-    cy.webdriverUniversityContactUsFormSubmit(
+    const contactUsPage = new ContactUsPage();
+    contactUsPage.contactFormSubmission(
       data.firstName,
       data.lastName,
       " ",
