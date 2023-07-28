@@ -2,7 +2,7 @@
 
 describe("Handling alerts and popups", () => {
   beforeEach(() => {
-    cy.visit("http://www.webdriveruniversity.com/");
+    cy.visit("/");
     cy.get("#popup-alerts").invoke("removeAttr", "target").click();
   });
 

@@ -5,15 +5,16 @@ describe("Test Contact Us form via WebdriverUniversity", () => {
     cy.fixture("example").then((data) => {
       globalThis.data = data;
     });
-    cy.visit("http://www.webdriveruniversity.com/");
-    cy.get("#contact-us").invoke("removeAttr", "target").click();
+    cy.visit(
+      Cypress.env("webdriverUniversityHomePage") + "/Contact-Us/contactus.html"
+    );
   });
 
   it("Should be able to successfully submit Contact Us form", () => {
     cy.document().should("have.property", "charset", "UTF-8");
     cy.title().should("include", "WebDriver");
     cy.webdriverUniversityContactUsFormSubmit(
-      data.firstName,
+      Cypress.env("firstName"),
       data.lastName,
       data.email,
       data.messageText,

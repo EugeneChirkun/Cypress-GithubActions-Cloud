@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 describe("Working with data tables on WebdriverUniversity", () => {
     beforeEach(() => {
-      cy.visit("http://webdriveruniversity.com/");
+      cy.visit("/");
       cy.get("#data-table").invoke("removeAttr", "target").click({ force: true });
     });
 

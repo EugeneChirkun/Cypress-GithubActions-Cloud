@@ -9,6 +9,14 @@ module.exports = defineConfig({
     },
     specPattern: "cypress/e2e/**/*.{js, jsx, ts, tsx, feature}",
     experimentalModifyObstructiveThirdPartyCode: true,
-    experimentalWebKitSupport: true
+    experimentalWebKitSupport: true,
+    chromeWebSecurity: false,
+    defaultCommandTimeout: 10000,
+    pageLoadTimeout: 120000,
+    env: {
+      firstName: "Sarah",
+      webdriverUniversityHomePage: "http://www.webdriveruniversity.com"
+    },
+    baseUrl: "http://www.webdriveruniversity.com"
   },
 })

@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 describe("Handling file upload via Webdriveruniversity page", () => {
   beforeEach(() => {
-    cy.visit("http://webdriveruniversity.com/");
+    cy.visit("/");
     cy.get("#file-upload")
       .invoke("removeAttr", "target")
       .click({ force: true });

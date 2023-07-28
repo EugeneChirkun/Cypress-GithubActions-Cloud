@@ -2,7 +2,7 @@
 
 describe("Handling WebdriverUniversity autocomplete", () => {
   beforeEach(() => {
-    cy.visit("http://www.webdriveruniversity.com/");
+    cy.visit("/");
     cy.get("#autocomplete-textfield").invoke("removeAttr", "target").click();
   });
 

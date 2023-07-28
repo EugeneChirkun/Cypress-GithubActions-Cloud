@@ -2,7 +2,7 @@
 
 describe("Handling iFrames", () => {
   beforeEach(() => {
-    cy.visit("http://www.webdriveruniversity.com/");
+    cy.visit("/");
     cy.get("#iframe").invoke("removeAttr", "target").click();
   });
 

@@ -2,7 +2,7 @@
 
 describe("Handling WebdriverUniversity radio buttons", () => {
   beforeEach(()=> {
-    cy.visit("http://www.webdriveruniversity.com/");
+    cy.visit("/");
     cy.get("#dropdown-checkboxes-radiobuttons")
       .invoke("removeAttr", "target")
       .click();
