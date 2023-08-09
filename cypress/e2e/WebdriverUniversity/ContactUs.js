@@ -5,7 +5,7 @@ import ContactUsPage from "../../support/PageObjects/WebdriverUni/ContactUsPage"
 describe("Test Contact Us form via WebdriverUniversity", () => {
   const homePage = new HomePage();
   const contactUsPage = new ContactUsPage();
-  
+
   before(() => {
     cy.fixture("example").then((data) => {
       globalThis.data = data;
