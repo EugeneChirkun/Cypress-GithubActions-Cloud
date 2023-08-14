@@ -5,11 +5,9 @@ class HairCarePage {
 
     addHairCareProductsToCart() {
         globalThis.products.productName.forEach((element) => {
-            cy.addProductToCart(element).then(()=> {
-                // debugger;
-            });
+            cy.addProductToCart(element);
           });
-          cy.get('.dropdown-toggle > .fa').click().debug();
+          cy.get('.dropdown-toggle > .fa').click();
     }
   }
   

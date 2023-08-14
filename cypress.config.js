@@ -13,6 +13,11 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     defaultCommandTimeout: 10000,
     pageLoadTimeout: 120000,
+    screenshotOnRunFailure: true,
+    trashAssetsBeforeRuns: true,
+    videoCompression: 45,
+    viewportHeight: 1080,
+    viewportWidth: 1920,
     env: {
       firstName: "Sarah",
       webdriverUniversityHomePage: "http://www.webdriveruniversity.com"
