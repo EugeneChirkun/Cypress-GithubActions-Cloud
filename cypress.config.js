@@ -1,6 +1,7 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
+  projectId: 'nk29kz',
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
@@ -15,9 +16,6 @@ module.exports = defineConfig({
     pageLoadTimeout: 120000,
     screenshotOnRunFailure: true,
     trashAssetsBeforeRuns: true,
-    videoCompression: 45,
-    viewportHeight: 1080,
-    viewportWidth: 1920,
     env: {
       firstName: "Sarah",
       webdriverUniversityHomePage: "http://www.webdriveruniversity.com"
