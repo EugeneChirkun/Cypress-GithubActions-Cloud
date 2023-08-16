@@ -5,13 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "runAllTestsInCloudChrome": "npx cypress run -b chrome --record --key 7f5d0d24-e4cb-412d-9b88-875b4f7b5783"
+    "runAllTests": "npx cypress run",
+    "runAllTestsInCloud": "npx cypress run --record --key 7f5d0d24-e4cb-412d-9b88-875b4f7b5783",
+    "runAllTestsInCloudFirefox": "npx cypress run --record --key 7f5d0d24-e4cb-412d-9b88-875b4f7b5783 --browser firefox",
+    "junitReportMerge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
+    "deleteJunitReport": "rm -rf cypress/results/junit/results.xml",
+    "deleteTestResults": "rm -rf cypress/results/* || true",
+    "generateMochawesomeReport": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
+    "deleteMochawesomeReport": "rm -rf mochawesome-report/* || true",
+    "cypressRegressPack": "npm run deleteTestResults && npm run deleteMochawesomeReport && npm run runAllTests && npm run generateMochawesomeReport"
   },
   "author": "Eugene Chirkun",
   "license": "ISC",
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
     "cypress": "^12.14.0",
+    "cypress-multi-reporters": "^1.6.3",
+    "mocha-junit-reporter": "^2.2.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
     "playwright-webkit": "1.34"
   }
 }

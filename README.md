@@ -67,3 +67,8 @@ Now, you should be able to use WebKit like any other browser. For example, to re
 cypress run --browser webkit --record # ...
 ```
 WebKit support is experimental, so you may encounter issues. 
+
+## Reporting
+
+All relevant info on https://docs.cypress.io/guides/tooling/reporters#Multiple-reporters
+

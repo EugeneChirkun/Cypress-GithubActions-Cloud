@@ -2,6 +2,15 @@
 logs
 *.log
 
+# Reports
+cypress/videos
+cypress/screenshots
+cypress/reports/**
+results
+mochawesome-report
+mochawesome-report/**
+mochawesome.json
+
 # Runtime data
 pids
 *.pid
@@ -25,6 +34,3 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
-cypress/videos
-cypress/screenshots
-cypress/reports/**
