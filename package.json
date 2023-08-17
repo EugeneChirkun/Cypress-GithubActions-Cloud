@@ -13,7 +13,8 @@
     "deleteTestResults": "rm -rf cypress/results/* || true",
     "generateMochawesomeReport": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
     "deleteMochawesomeReport": "rm -rf mochawesome-report/* || true",
-    "cypressRegressPack": "npm run deleteTestResults && npm run deleteMochawesomeReport && npm run runAllTests && npm run generateMochawesomeReport"
+    "cypressRegressPack": "npm run deleteTestResults && npm run deleteMochawesomeReport && npm run runAllTests && npm run generateMochawesomeReport",
+    "runAllTestsStaging": "npx cypress run --env configFile=staging"
   },
   "author": "Eugene Chirkun",
   "license": "ISC",

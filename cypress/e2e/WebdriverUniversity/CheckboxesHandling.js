@@ -2,6 +2,7 @@
 
 describe("Handling WebdriverUniversity checkboxes", () => {
   beforeEach(()=> {
+    cy.log(Cypress.env("name"));
     cy.navigateToWebdriverUni_CheckboxesPage();
   })
   it("Check and validate checkboxes", () => {

@@ -1,6 +1,7 @@
 {
     "baseUrl": "https://www.automationteststore.com/",
     "env": {
-        "name": "Joe Blogs"
+        "name": "Joe Blogs",
+        "firstName": "Elvis"
     }
 }
