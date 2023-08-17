@@ -1,6 +1,11 @@
 /// <reference types='Cypress' />
 
-describe("Test Contact Us form via Automation Test Store", () => {
+describe("Test Contact Us form via Automation Test Store", {
+  retries: {
+    runMode: 0,
+    openMode: 0
+  }
+}, () => {
   before(() => {
     cy.fixture("userDetails").as("user");
   });

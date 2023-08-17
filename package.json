@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "runAllTests": "npx cypress run",
+    "runAllAutomationStoreTests": "npx cypress run --spec cypress/e2e/AutomationTestStore",
     "runAllTestsInCloud": "npx cypress run --record --key 7f5d0d24-e4cb-412d-9b88-875b4f7b5783",
     "runAllTestsInCloudFirefox": "npx cypress run --record --key 7f5d0d24-e4cb-412d-9b88-875b4f7b5783 --browser firefox",
     "junitReportMerge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
