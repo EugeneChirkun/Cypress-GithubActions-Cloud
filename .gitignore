@@ -3,12 +3,11 @@ logs
 *.log
 
 # Reports
-cypress/videos
-cypress/screenshots
-cypress/reports/**
+videos
+screenshots
+reports
 results
 mochawesome-report
-mochawesome-report/**
 mochawesome.json
 
 # Runtime data
@@ -34,3 +33,4 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+package-lock.json
