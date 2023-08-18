@@ -53,7 +53,6 @@ Cypress.Commands.add("navigateToWebdriverUni_HomePage", () => {
 
 Cypress.Commands.add("navigateToWebdriverUni_CheckboxesPage", () => {
   cy.visit("/" + "Dropdown-Checkboxes-RadioButtons/index.html");
-  // /Dropdown-Checkboxes-RadioButtons/index.html
 });
 
 // -- This will overwrite an existing command --

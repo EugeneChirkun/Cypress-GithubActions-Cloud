@@ -29,9 +29,6 @@ describe("Working with aliases", () => {
     cy.visit("https://automationteststore.com/");
 
     cy.get(".thumbnail").as("produchThumbnail");
-    // cy.get("@produchThumbnail").find('.oneprice').each(($el, index, $list) => {
-    //   cy.log("Index: " + index + " : " + $el.text());
-    // });
     cy.get("@produchThumbnail").find('.oneprice').invoke('text').as('itemPrice');
     cy.get("@produchThumbnail").find('.pricenew').invoke('text').as('saleItemPrice');
     
