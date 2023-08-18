@@ -4,7 +4,7 @@
   "description": "Cypress v12 automation framework tutorial ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run runAllTests",
     "runAllTests": "npx cypress run",
     "runAllAutomationStoreTests": "npx cypress run --spec cypress/e2e/AutomationTestStore/*",
     "runAllAutomationStoreTestsOnCLoud": "npx cypress run --spec cypress/e2e/AutomationTestStore/* --record --key 7f5d0d24-e4cb-412d-9b88-875b4f7b5783",
