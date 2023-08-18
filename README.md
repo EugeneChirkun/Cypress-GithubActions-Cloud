@@ -1,4 +1,4 @@
-# CypressCompleteTutorial_GianniBruno
+# Cypress-GithubActions-Cloud
 
 ## Prerequisites
 Ensure, that you have Node.js installed and Node Package Manager installed. Run in Command Prompt commands:
