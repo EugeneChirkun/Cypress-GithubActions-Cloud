@@ -1,9 +1,9 @@
 pipeline {
     agent any
-    ansiColor('xterm')
     tools{nodejs "node"}
 
-    stages {
+    ansiColor('xterm'){
+        stages {
         stage('Cypress Parallel Test Suite') {
             parallel {
                 stage ('Slave node 1') {
@@ -26,5 +26,6 @@ pipeline {
                 }
             }
         }
+    }
     }
 }
