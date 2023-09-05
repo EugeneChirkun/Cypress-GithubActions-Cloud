@@ -13,7 +13,7 @@ pipeline {
                         bat 'npm install cypress'
                         bat 'npm install'
                         bat 'npm update'
-                        bat 'npm run runAllTests'
+                        bat 'npm run runAllTestsOnCloud'
                     }
         }
     }
