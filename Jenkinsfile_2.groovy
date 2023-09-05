@@ -1,3 +1,4 @@
+tools{nodejs "node"}
     checkout scm
     ansiColor('xterm') {
 
