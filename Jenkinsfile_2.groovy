@@ -1,5 +1,3 @@
-import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
-
     checkout scm
     ansiColor('xterm') {
 
