@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    ansiColor('xterm')
     tools{nodejs "node"}
 
     stages {
