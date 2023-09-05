@@ -1,6 +1,5 @@
 import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
 
-node('build6G-mesos') {
     checkout scm
     ansiColor('xterm') {
 
@@ -14,6 +13,5 @@ node('build6G-mesos') {
                     }
         } 
     }
-}
 
 
