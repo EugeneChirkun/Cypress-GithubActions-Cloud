@@ -2,8 +2,7 @@ pipeline {
     agent any
     tools{nodejs "node"}
 
-        // stages 
-        ansiColor('xterm') {
+        stages {
         stage('Test Suite') {
 
                     steps {
