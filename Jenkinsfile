@@ -2,11 +2,10 @@ pipeline {
     agent any
     tools{nodejs "node"}
 
-    ansiColor('xterm'){
-        stages {
-        stage('Cypress Parallel Test Suite') {
-            parallel {
-                stage ('Slave node 1') {
+        // stages 
+        ansiColor('xterm') {
+        stage('Test Suite') {
+
                     steps {
                         git url: 'https://github.com/EugeneChirkun/Cypress-GithubActions-Cloud.git'
                         bat 'npm install cypress'
@@ -14,18 +13,6 @@ pipeline {
                         bat 'npm update'
                         bat 'npm run runAllTests'
                     }
-                }
-                stage ('Slave node 2') {
-                    steps {
-                        git url: 'https://github.com/EugeneChirkun/Cypress-GithubActions-Cloud.git'
-                        bat 'npm install cypress'
-                        bat 'npm install'
-                        bat 'npm update'
-                        bat 'npm run runAllTests'
-                    }
-                }
-            }
         }
-    }
     }
 }
